@@ -54,17 +54,8 @@ namespace gdb_domain_manager
 
         private void btnRefreshDomainInfoA_Click(object sender, EventArgs e)
         {
-            // init domain list
-            DomainList domainsA = new DomainList();
-
-            // open original workspace (workspace A)
-            IWorkspace originalWorkspace = geodatabasePathA.ToWorkspace();
-
-            // read domain list from workspace A
-            IWorkspaceDomains2 originalWorkspaceDomains = originalWorkspace as IWorkspaceDomains2;
-
-            // add to list
-            domainsA = originalWorkspaceDomains.Domains.ToDomainList();
+            // get domain list for original workspace
+            DomainList domainsA = getDomainList(geodatabasePathA);
             
             // populate dataGridView
             dgA.Rows.Clear();
@@ -79,14 +70,10 @@ namespace gdb_domain_manager
 
         private void btnRefreshDomainListB_Click(object sender, EventArgs e)
         {
-            DomainList domainsB = new DomainList();
+            // get domain list for target workspace
+            DomainList domainsB = getDomainList(geodatabasePathB);
 
-            IWorkspace targetWorkspace = geodatabasePathB.ToWorkspace();
-
-            IWorkspaceDomains2 targetWorkspaceDomains = targetWorkspace as IWorkspaceDomains2;
-
-            domainsB = targetWorkspaceDomains.Domains.ToDomainList();
-
+            // populate dataGridView
             dgB.Rows.Clear();
             foreach (IDomain domain in domainsB)
             {
@@ -95,6 +82,36 @@ namespace gdb_domain_manager
                 row.Cells["DomainB"].Value = domain.Name.ToString();
                 row.Cells["DescriptionB"].Value = domain.Description.ToString();
             }
+        }
+
+        /// <summary>
+        /// Returns domain list in DomainList format
+        /// </summary>
+        /// <param name="workspacePath"></param>
+        /// <returns>DomainList domains</returns>
+        private DomainList getDomainList(string workspacePath)
+        {
+            // init domain list
+            DomainList domains = new DomainList();
+
+            // open workspace 
+            IWorkspace workspace = workspacePath.ToWorkspace();
+
+            // read domain list from workspace A
+            IWorkspaceDomains2 workspaceDomains = workspace as IWorkspaceDomains2;
+
+            // add to list
+            try
+            {
+                domains = workspaceDomains.Domains.ToDomainList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Couldn't read domain info from workspace - probably not ArcGIS GDB?");
+                
+            }
+
+            return domains;
         }
     }
 }
