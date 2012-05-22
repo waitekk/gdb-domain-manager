@@ -37,25 +37,27 @@ namespace gdb_domain_manager
             this.dgA = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgB = new System.Windows.Forms.DataGridView();
-            this.checkBoxA = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DomainA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkBoxB = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DomainB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnChangeGDB_A = new System.Windows.Forms.Button();
             this.btnChangeGDB_B = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.gdbA = new System.Windows.Forms.Label();
             this.gdbB = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnRefreshDomainInfoA = new System.Windows.Forms.Button();
+            this.checkBoxB = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DomainB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBoxA = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DomainA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnChangeGDB_A = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRefreshDomainListB = new System.Windows.Forms.Button();
+            this.btnRefreshDomainInfoA = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgA)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -67,7 +69,7 @@ namespace gdb_domain_manager
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(772, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(824, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -126,6 +128,7 @@ namespace gdb_domain_manager
             this.dgA.Location = new System.Drawing.Point(7, 84);
             this.dgA.Name = "dgA";
             this.dgA.ReadOnly = true;
+            this.dgA.RowHeadersVisible = false;
             this.dgA.Size = new System.Drawing.Size(357, 248);
             this.dgA.TabIndex = 0;
             // 
@@ -136,7 +139,7 @@ namespace gdb_domain_manager
             this.groupBox2.Controls.Add(this.gdbB);
             this.groupBox2.Controls.Add(this.btnChangeGDB_B);
             this.groupBox2.Controls.Add(this.dgB);
-            this.groupBox2.Location = new System.Drawing.Point(389, 28);
+            this.groupBox2.Location = new System.Drawing.Point(442, 28);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(370, 338);
             this.groupBox2.TabIndex = 2;
@@ -155,60 +158,9 @@ namespace gdb_domain_manager
             this.dgB.Location = new System.Drawing.Point(7, 84);
             this.dgB.Name = "dgB";
             this.dgB.ReadOnly = true;
+            this.dgB.RowHeadersVisible = false;
             this.dgB.Size = new System.Drawing.Size(357, 248);
             this.dgB.TabIndex = 1;
-            // 
-            // checkBoxA
-            // 
-            this.checkBoxA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.checkBoxA.Frozen = true;
-            this.checkBoxA.HeaderText = "";
-            this.checkBoxA.Name = "checkBoxA";
-            this.checkBoxA.ReadOnly = true;
-            this.checkBoxA.Width = 5;
-            // 
-            // DomainA
-            // 
-            this.DomainA.HeaderText = "Name";
-            this.DomainA.Name = "DomainA";
-            this.DomainA.ReadOnly = true;
-            // 
-            // DescriptionA
-            // 
-            this.DescriptionA.HeaderText = "Description";
-            this.DescriptionA.Name = "DescriptionA";
-            this.DescriptionA.ReadOnly = true;
-            // 
-            // checkBoxB
-            // 
-            this.checkBoxB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.checkBoxB.Frozen = true;
-            this.checkBoxB.HeaderText = "";
-            this.checkBoxB.Name = "checkBoxB";
-            this.checkBoxB.ReadOnly = true;
-            this.checkBoxB.Width = 5;
-            // 
-            // DomainB
-            // 
-            this.DomainB.HeaderText = "Name";
-            this.DomainB.Name = "DomainB";
-            this.DomainB.ReadOnly = true;
-            // 
-            // DescriptionB
-            // 
-            this.DescriptionB.HeaderText = "Description";
-            this.DescriptionB.Name = "DescriptionB";
-            this.DescriptionB.ReadOnly = true;
-            // 
-            // btnChangeGDB_A
-            // 
-            this.btnChangeGDB_A.Location = new System.Drawing.Point(275, 14);
-            this.btnChangeGDB_A.Name = "btnChangeGDB_A";
-            this.btnChangeGDB_A.Size = new System.Drawing.Size(89, 23);
-            this.btnChangeGDB_A.TabIndex = 1;
-            this.btnChangeGDB_A.Text = "Change GDB";
-            this.btnChangeGDB_A.UseVisualStyleBackColor = true;
-            this.btnChangeGDB_A.Click += new System.EventHandler(this.btnChangeGDB_A_Click);
             // 
             // btnChangeGDB_B
             // 
@@ -256,33 +208,106 @@ namespace gdb_domain_manager
             this.label2.TabIndex = 4;
             this.label2.Text = "Current GDB:";
             // 
-            // btnRefreshDomainInfoA
+            // checkBoxB
             // 
-            this.btnRefreshDomainInfoA.AutoSize = true;
-            this.btnRefreshDomainInfoA.Location = new System.Drawing.Point(9, 40);
-            this.btnRefreshDomainInfoA.Name = "btnRefreshDomainInfoA";
-            this.btnRefreshDomainInfoA.Size = new System.Drawing.Size(112, 23);
-            this.btnRefreshDomainInfoA.TabIndex = 4;
-            this.btnRefreshDomainInfoA.Text = "Refresh Domain List";
-            this.btnRefreshDomainInfoA.UseVisualStyleBackColor = true;
-            this.btnRefreshDomainInfoA.Click += new System.EventHandler(this.btnRefreshDomainInfoA_Click);
+            this.checkBoxB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.checkBoxB.Frozen = true;
+            this.checkBoxB.HeaderText = "";
+            this.checkBoxB.Name = "checkBoxB";
+            this.checkBoxB.ReadOnly = true;
+            this.checkBoxB.Width = 5;
+            // 
+            // DomainB
+            // 
+            this.DomainB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DomainB.HeaderText = "Name";
+            this.DomainB.Name = "DomainB";
+            this.DomainB.ReadOnly = true;
+            // 
+            // DescriptionB
+            // 
+            this.DescriptionB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DescriptionB.FillWeight = 110F;
+            this.DescriptionB.HeaderText = "Description";
+            this.DescriptionB.Name = "DescriptionB";
+            this.DescriptionB.ReadOnly = true;
+            // 
+            // checkBoxA
+            // 
+            this.checkBoxA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.checkBoxA.FillWeight = 110F;
+            this.checkBoxA.Frozen = true;
+            this.checkBoxA.HeaderText = "";
+            this.checkBoxA.Name = "checkBoxA";
+            this.checkBoxA.ReadOnly = true;
+            this.checkBoxA.Width = 5;
+            // 
+            // DomainA
+            // 
+            this.DomainA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DomainA.HeaderText = "Name";
+            this.DomainA.Name = "DomainA";
+            this.DomainA.ReadOnly = true;
+            this.DomainA.Width = 59;
+            // 
+            // DescriptionA
+            // 
+            this.DescriptionA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DescriptionA.HeaderText = "Description";
+            this.DescriptionA.Name = "DescriptionA";
+            this.DescriptionA.ReadOnly = true;
+            // 
+            // btnChangeGDB_A
+            // 
+            this.btnChangeGDB_A.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChangeGDB_A.Location = new System.Drawing.Point(275, 14);
+            this.btnChangeGDB_A.Name = "btnChangeGDB_A";
+            this.btnChangeGDB_A.Size = new System.Drawing.Size(89, 23);
+            this.btnChangeGDB_A.TabIndex = 1;
+            this.btnChangeGDB_A.Text = "Change GDB";
+            this.btnChangeGDB_A.UseVisualStyleBackColor = true;
+            this.btnChangeGDB_A.Click += new System.EventHandler(this.btnChangeGDB_A_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::gdb_domain_manager.Properties.Resources.XSDSchema_ImportIcon;
+            this.pictureBox1.InitialImage = global::gdb_domain_manager.Properties.Resources.XSDSchema_ImportIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(404, 185);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(18, 19);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // btnRefreshDomainListB
             // 
             this.btnRefreshDomainListB.AutoSize = true;
+            this.btnRefreshDomainListB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRefreshDomainListB.Location = new System.Drawing.Point(6, 45);
             this.btnRefreshDomainListB.Name = "btnRefreshDomainListB";
-            this.btnRefreshDomainListB.Size = new System.Drawing.Size(112, 23);
+            this.btnRefreshDomainListB.Size = new System.Drawing.Size(125, 28);
             this.btnRefreshDomainListB.TabIndex = 5;
             this.btnRefreshDomainListB.Text = "Refresh Domain List";
             this.btnRefreshDomainListB.UseVisualStyleBackColor = true;
             this.btnRefreshDomainListB.Click += new System.EventHandler(this.btnRefreshDomainListB_Click);
             // 
+            // btnRefreshDomainInfoA
+            // 
+            this.btnRefreshDomainInfoA.AutoSize = true;
+            this.btnRefreshDomainInfoA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefreshDomainInfoA.Location = new System.Drawing.Point(9, 45);
+            this.btnRefreshDomainInfoA.Name = "btnRefreshDomainInfoA";
+            this.btnRefreshDomainInfoA.Size = new System.Drawing.Size(115, 28);
+            this.btnRefreshDomainInfoA.TabIndex = 4;
+            this.btnRefreshDomainInfoA.Text = "Refresh Domain List";
+            this.btnRefreshDomainInfoA.UseVisualStyleBackColor = true;
+            this.btnRefreshDomainInfoA.Click += new System.EventHandler(this.btnRefreshDomainInfoA_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 477);
+            this.ClientSize = new System.Drawing.Size(824, 389);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -298,6 +323,7 @@ namespace gdb_domain_manager
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,12 +340,6 @@ namespace gdb_domain_manager
         private System.Windows.Forms.DataGridView dgA;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgB;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn checkBoxA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DomainA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionA;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn checkBoxB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DomainB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionB;
         private System.Windows.Forms.Button btnChangeGDB_A;
         private System.Windows.Forms.Button btnChangeGDB_B;
         private System.Windows.Forms.Label label1;
@@ -328,6 +348,13 @@ namespace gdb_domain_manager
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRefreshDomainInfoA;
         private System.Windows.Forms.Button btnRefreshDomainListB;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn checkBoxB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DomainB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionB;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn checkBoxA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DomainA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionA;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -59,5 +59,33 @@ namespace gdb_domain_manager.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Bitmap _112_RefreshArrow_Blue {
+            get {
+                object obj = ResourceManager.GetObject("112_RefreshArrow_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ActualSizeHS {
+            get {
+                object obj = ResourceManager.GetObject("ActualSizeHS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap refresh {
+            get {
+                object obj = ResourceManager.GetObject("refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap XSDSchema_ImportIcon {
+            get {
+                object obj = ResourceManager.GetObject("XSDSchema_ImportIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

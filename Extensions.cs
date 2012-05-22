@@ -74,5 +74,34 @@ namespace gdb_domain_manager
             return list;
         }
 
+
+        /// <summary>
+        /// parses the object class table name from the fully qualified object class name:
+        /// </summary>
+        /// <param name="objectClassName">Name of the object class.</param>
+        /// <returns>
+        /// A string containing only the object class name.  So and objectClassName of 'GIS.DBO.PARCELS' would be returned as PARCELS
+        /// </returns>
+        public static string ParseObjectClassName(this string objectClassName)
+        {
+            try
+            {
+                if (objectClassName.LastIndexOf('.') > 0)
+                {
+                    return objectClassName.Substring(objectClassName.LastIndexOf('.') + 1).Trim();
+                }
+                else
+                {
+                    // if there's no period, then return the objectClassName as-is
+                    return objectClassName;
+                }
+            }
+            catch (Exception ex)
+            {
+                //Trace.WriteLine("ParseObjectClassName  Exception: " + ex.Message + "\n\nStackTrace: " + ex.StackTrace);
+                throw;
+            }
+        }
+
     }
 }
