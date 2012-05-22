@@ -36,7 +36,7 @@ namespace gdb_domain_manager
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgA = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgB = new System.Windows.Forms.DataGridView();
             this.checkBoxA = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DomainA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescriptionA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@ namespace gdb_domain_manager
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgA)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgB)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -135,7 +135,7 @@ namespace gdb_domain_manager
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.gdbB);
             this.groupBox2.Controls.Add(this.btnChangeGDB_B);
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.dgB);
             this.groupBox2.Location = new System.Drawing.Point(389, 28);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(370, 338);
@@ -143,20 +143,20 @@ namespace gdb_domain_manager
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "B";
             // 
-            // dataGridView2
+            // dgB
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgB.AllowUserToAddRows = false;
+            this.dgB.AllowUserToDeleteRows = false;
+            this.dgB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.checkBoxB,
             this.DomainB,
             this.DescriptionB});
-            this.dataGridView2.Location = new System.Drawing.Point(7, 84);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(357, 248);
-            this.dataGridView2.TabIndex = 1;
+            this.dgB.Location = new System.Drawing.Point(7, 84);
+            this.dgB.Name = "dgB";
+            this.dgB.ReadOnly = true;
+            this.dgB.Size = new System.Drawing.Size(357, 248);
+            this.dgB.TabIndex = 1;
             // 
             // checkBoxA
             // 
@@ -296,7 +296,7 @@ namespace gdb_domain_manager
             ((System.ComponentModel.ISupportInitialize)(this.dgA)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,7 +312,7 @@ namespace gdb_domain_manager
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgA;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgB;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkBoxA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DomainA;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionA;

@@ -54,19 +54,21 @@ namespace gdb_domain_manager
 
         private void btnRefreshDomainInfoA_Click(object sender, EventArgs e)
         {
-            DomainList domains = new DomainList();
+            // init domain list
+            DomainList domainsA = new DomainList();
 
+            // open original workspace (workspace A)
             IWorkspace originalWorkspace = geodatabasePathA.ToWorkspace();
-            IWorkspace targetWorkspace = geodatabasePathB.ToWorkspace();
 
+            // read domain list from workspace A
             IWorkspaceDomains2 originalWorkspaceDomains = originalWorkspace as IWorkspaceDomains2;
-            IWorkspaceDomains2 targetWorkspaceDomains = targetWorkspace as IWorkspaceDomains2;
 
-            domains = originalWorkspaceDomains.Domains.ToDomainList();
-
-            dgA.Rows.Clear();
+            // add to list
+            domainsA = originalWorkspaceDomains.Domains.ToDomainList();
             
-            foreach (IDomain domain in domains)
+            // populate dataGridView
+            dgA.Rows.Clear();
+            foreach (IDomain domain in domainsA)
             {
                 int index = dgA.Rows.Add();
                 DataGridViewRow row = dgA.Rows[index];
@@ -77,7 +79,22 @@ namespace gdb_domain_manager
 
         private void btnRefreshDomainListB_Click(object sender, EventArgs e)
         {
+            DomainList domainsB = new DomainList();
 
+            IWorkspace targetWorkspace = geodatabasePathB.ToWorkspace();
+
+            IWorkspaceDomains2 targetWorkspaceDomains = targetWorkspace as IWorkspaceDomains2;
+
+            domainsB = targetWorkspaceDomains.Domains.ToDomainList();
+
+            dgB.Rows.Clear();
+            foreach (IDomain domain in domainsB)
+            {
+                int index = dgB.Rows.Add();
+                DataGridViewRow row = dgB.Rows[index];
+                row.Cells["DomainB"].Value = domain.Name.ToString();
+                row.Cells["DescriptionB"].Value = domain.Description.ToString();
+            }
         }
     }
 }
