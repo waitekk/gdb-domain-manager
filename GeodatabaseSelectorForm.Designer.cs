@@ -45,6 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 165);
             this.Controls.Add(this.geodatabaseSelector1);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "GeodatabaseSelectorForm";
             this.Text = "GeodatabaseSelectorForm";
             this.ResumeLayout(false);
