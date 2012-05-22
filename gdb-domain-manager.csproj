@@ -103,6 +103,19 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="GeodatabaseSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GeodatabaseSelector.Designer.cs">
+      <DependentUpon>GeodatabaseSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeodatabaseSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeodatabaseSelectorForm.Designer.cs">
+      <DependentUpon>GeodatabaseSelectorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +130,12 @@
     </Compile>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeodatabaseSelector.resx">
+      <DependentUpon>GeodatabaseSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeodatabaseSelectorForm.resx">
+      <DependentUpon>GeodatabaseSelectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
