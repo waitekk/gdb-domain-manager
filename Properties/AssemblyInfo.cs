@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ArcGIS Geodatabase Domain Manager")]
-[assembly: AssemblyCopyright("Copyright © Max V. Zaets, 2012")]
+[assembly: AssemblyCopyright("Copyright © Max V. Zaets <waitekk.work@gmail.com>, 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
