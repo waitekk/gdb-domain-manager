@@ -14,5 +14,13 @@ namespace gdb_domain_manager
         {
             InitializeComponent();
         }
+
+        #region menu
+        private void aboutMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox ab = new AboutBox();
+            ab.Show();
+        } 
+        #endregion
     }
 }

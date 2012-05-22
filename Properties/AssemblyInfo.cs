@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("gdb-domain-manager")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("ArcGIS Geodatabase Domain Manager")]
+[assembly: AssemblyDescription("ArcGIS Geodatabase Domain Manager is a small utility that helps GIS users add, delete or transfer domains between geodatabases.\r\n\r\nSource, wiki and more info are available at http://github.com/waitekk/gdb-domain-manager.\r\n\r\nLicense info is available in file LICENSE.txt")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("UGATU")]
-[assembly: AssemblyProduct("gdb-domain-manager")]
-[assembly: AssemblyCopyright("Copyright © UGATU 2012")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ArcGIS Geodatabase Domain Manager")]
+[assembly: AssemblyCopyright("Copyright © Max V. Zaets, 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.1.1.1")]
+[assembly: AssemblyFileVersion("0.1.1.1")]
